@@ -5,10 +5,10 @@ This is a smart contract that can be used as a multi-user wallet with approvals 
 Collective wallet smart contract example is deployed at address in Etherium Goerli network [ 0x55F776969622b8c455EAE2996216bb6b9002e0A1](https://goerli.etherscan.io/address/0x55f776969622b8c455eae2996216bb6b9002e0a1)
 
 ## Features
- - The contract owner can add approvers to the wallet.
- - Users can submit transactions for approval.
- - Users can approve transactions.
- - When a transaction has received the required number of approvals, it is executed and the appropriate amount of tokens is transferred to the recipient.
+ - The contract owner can add approvers to the wallet by calling the `addApprover` function.
+ - Users can submit transactions for approval by calling the `submitTransaction` function and specifying the transaction ID, recipient address, and the amount of tokens to be transferred.
+ - Users can approve transactions by calling the `approveTransaction` function and specifying the transaction ID.
+ - When a transaction has received the required number of approvals, it is executed and the appropriate amount of tokens is transferred to the recipient. The transaction is then added to the list of approved transactions and the `TransactionApproved` event is emitted.
  - The contract keeps track of the transactions that have been submitted, the number of approvals they have received, and which users have approved them.
 
 ## Usage
